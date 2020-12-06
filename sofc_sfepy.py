@@ -30,7 +30,10 @@ def mov():
 
 def setParams(filename:str, result:dict):
     data = ''
-    with open(filename, 'r+', encoding='gbk') as f:
+    encode='utf-8'
+    if platform.system()=="Windows":
+        encode='gbk'
+    with open(filename, 'r+', encoding=encode) as f:
         for line in f.readlines():
             if (line.find("V_cell = ")>=0):
                 print(line)
