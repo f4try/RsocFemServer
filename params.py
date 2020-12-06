@@ -1,6 +1,6 @@
 kappa_c = 1500
 kappa_s = 1000
-kappa_m = 6.9
+kappa_m = 1
 k_c = 60
 k_s = 10
 k_l = 1.2
@@ -42,18 +42,10 @@ cH2_ref = xH2_in * p_ref / KH2  # "Reference concentration, H2"
 cO2_ref = xO2_in * p_ref / KO2  # "Reference concentration, O2"
 cH2O_ref = (1 - xH2_in) * p_ref / KH2  # "Reference concentration, H2"
 l_act = 10e-6  # "[um]Active layer thickness"
-F_const = 96485.33289  # "鎷烽敓鏂ゆ嫹閿熸枻鎷疯瘮閿熸枻鎷烽敓绲扖/mol]"
-# F_const = 96485  # "閿熸枻鎷烽敓鏂ゆ嫹閿熻妭绛规嫹閿熸枻鎷穂C/mol]"
-R_const = 8.31446261815324  # "閿熸枻鎷烽敓钘夊父閿熸枻鎷穂J/(mol閿熸枻鎷稫)]"
-# R_const = 8.3145  # "閿熸枻鎷烽敓钘夊父閿熸枻鎷穂J/(mol閿熸枻鎷稫)]"
+F_const = 96485.33289  # "������ڳ���[C/mol]"
+# F_const = 96485  # "�����ڳ���[C/mol]"
+R_const = 8.31446261815324  # "���峣��[J/(mol��K)]"
+# R_const = 8.3145  # "���峣��[J/(mol��K)]"
 K = -6 * l_act * (1 - eps_mac) * F_const * D_agg / R_agg ** 2
-F_const * D_agg / R_agg ** 2
-D_agg / R_agg ** 2
-F_const * D_agg / R_agg ** 2
-
-
-
-
-
 
 

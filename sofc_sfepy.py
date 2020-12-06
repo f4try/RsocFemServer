@@ -4,10 +4,13 @@ import imageio
 
 path.append( '.' )
 from os import system
-
+import platform
 def run(filename:str, resultformat:str):
     system("python simple.py "+filename+" --format "+resultformat)
-    system("cp output/3dcell* static/")
+    if platform.system()=="Windows":
+        system("copy output\\3dcell* static\\")
+    else:
+        system("cp output/3dcell* static/")
 def post(dims:int):
     if dims==3:
         system("python postproc.py output/3dcell.vtk  -o static/result3d.png -n --wireframe")
@@ -27,7 +30,7 @@ def mov():
 
 def setParams(filename:str, result:dict):
     data = ''
-    with open(filename, 'r+', encoding='utf-8') as f:
+    with open(filename, 'r+', encoding='gbk') as f:
         for line in f.readlines():
             if (line.find("V_cell = ")>=0):
                 print(line)
