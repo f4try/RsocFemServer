@@ -42,10 +42,10 @@ cH2_ref = xH2_in * p_ref / KH2  # "Reference concentration, H2"
 cO2_ref = xO2_in * p_ref / KO2  # "Reference concentration, O2"
 cH2O_ref = (1 - xH2_in) * p_ref / KH2  # "Reference concentration, H2"
 l_act = 10e-6  # "[um]Active layer thickness"
-F_const = 96485.33289  # "������ڳ���[C/mol]"
-# F_const = 96485  # "�����ڳ���[C/mol]"
-R_const = 8.31446261815324  # "���峣��[J/(mol��K)]"
-# R_const = 8.3145  # "���峣��[J/(mol��K)]"
+F_const = 96485.33289
+# F_const = 96485  
+R_const = 8.31446261815324  
+# R_const = 8.3145  
 K = -6 * l_act * (1 - eps_mac) * F_const * D_agg / R_agg ** 2
 
 
