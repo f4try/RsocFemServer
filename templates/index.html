@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Zheng Zong">
+    <meta name="generator" content="RSOCFem v1.0.0">
+    <title>RSOC技术笔记-可逆燃料电池有限元仿真系统</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static',filename='assets/dist/css/bootstrap.css') }}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',filename='assets/dist/css/jumbotron.css') }}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">RSOCFem</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">主页 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link dropdown" href="/fem">有限元程序</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/docs">查看文档</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">联系我们</a>
+            </li>
+        </ul>
+        <a class="btn btn-lg btn-primary mb-3 mb-md-0 ml-md-3" href="/fem">运行程序</a>
+    </div>
+</nav>
+
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-5">RSOC技术笔记</h1>
+            <h1 class="display-5">可逆运行的固体氧化物燃料电池有限元多物理场仿真系统</h1>
+            <p>
+                该系统适用于入口气体和负载可变的可逆运行固体氧化物燃料电池电堆单元的多物理场有限元仿真，主要用来实现可逆运行的燃料电池电堆电化学性能、温度分布和气体流速的估计，并对数据处理分析，将电堆的功率以及效率反应出来，为用户提供一个有电池参数可调的带气体控制和负载控制功能的燃料电池电堆电化学仿真测试平台。该系统的主要功能有：1.气体流量的控制和流速分布的仿真。2.负载电压分布仿真。3.
+                电堆电流分布的仿真。4.电堆功率与效率的计算。5.电堆温度分布的仿真。</p>
+        <a class="btn btn-lg btn-primary" href="/fem">运行程序</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>系统概述</h2>
+                <p>可逆运行的固体氧化物燃料电池有限元多物理场仿真系统采用有限元分析的方法，基于开源Python软件包Sfepy进行仿真计算。SfePy是一款用有限元方法求解耦合偏微分方程（PDE）系统的构建自定义应用程序的Python包，可以快速地对复杂的FEM问题进行编码。该系统适用于气体流量控制和负载控制下的可逆固体氧化物燃料电池的多物理场耦合的电化学仿真，主要用来实现对电堆气体流速，以及电堆中电流、电压和温度的仿真和处理分析，将电堆的性能反应出来。 </p>
+            </div>
+            <div class="col-md-4">
+                <h2>技术特点</h2>
+                <p>
+                    系统基于Python开发，该代码几乎全部用Python编写，最耗时的部分用C编写并由Cython包装或直接用Cython编写，计算速度快，通用性好，可以跨平台运行或部署在服务器上运行。采用先进的有限元仿真多物理场耦合技术和数据集成分析技术，以实现对燃料电池电堆中产生的电流、电压、气体流速、温度的仿真分析，对气体流量和负载控制下电化学数据进行集成，实现准确、便捷的电堆性能各项数据的估计、显示和分析，为用户提供一个可变参数的入口气体和负载可控的燃料电池电堆电化学仿真与设计平台。 </p>
+                <p><a class="btn btn-secondary" href="/docs" role="button">使用帮助 &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>致谢</h2>
+                <p>本仿真系统由西安交通大学电力设备电气绝缘国家重点实验室开发，属于国家电网公司总部科技项目基于对称固体氧化物燃料电池的热电解耦
+的综合能源系统基础研究（项目号：SGSDJN00FZQT1700446）的一部分，感谢国网山东省电力公司济南供电公司的资金支持。</p>
+                <p><a class="btn btn-secondary" href="/about" role="button">联系我们 &raquo;</a></p>
+            </div>
+        </div>
+
+        <hr>
+
+    </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+    <p align="center">&copy; 西安交通大学 2020 陕ICP备‪20009427‬号</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write("""<script src="{{ url_for('static',filename='assets/dist/js/jquery.slim.min.js')}}">""")</script>
+<script src="{{ url_for('static',filename='assets/dist/js/bootstrap.bundle.js')}}"></script>
+</body>
+</html>

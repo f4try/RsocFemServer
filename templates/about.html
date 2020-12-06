@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Zheng Zong">
+    <meta name="generator" content="RSOCFem v1.0.0">
+    <title>RSOC技术笔记-可逆燃料电池有限元仿真系统</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static',filename='assets/dist/css/bootstrap.css') }}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',filename='assets/dist/css/jumbotron.css') }}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">RSOCFem</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link" href="/">主页 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link dropdown" href="/fem">有限元程序</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/docs">查看文档</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/about">联系我们</a>
+            </li>
+        </ul>
+        <a class="btn btn-lg btn-primary mb-3 mb-md-0 ml-md-3" href="/fem">运行程序</a>
+    </div>
+</nav>
+
+<main role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-8">联系我们</h1>
+        </div>
+    </div>
+    <div class="container">
+    <p class="lead">西安交通大学 电气工程学院</p>
+            <p class="lead">电力设备电气绝缘国家重点实验室 新型储能与能量转换纳米材料研究中心</p>
+            <p class="lead">地址：陕西省西安市咸宁西路28号 邮编：710049</p>
+            <p class="lead">E-mail: wukai@mail.xjtu.edu.cn, zhoujun@mail.xjtu.edu.cn</p>
+            <p class="lead">个人主页：http://gr.xjtu.edu.cn/web/wukai, http://gr.xjtu.edu.cn/web/zhoujun</p>
+            <p class="lead">技术支持：zongzh@stu.xjtu.edu.cn</p>
+    </div>
+</main>
+
+<footer class="container">
+    <p  align="center">&copy; 西安交通大学 2020 陕ICP备‪20009427‬号</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write("""<script src="{{ url_for('static',filename='assets/dist/js/jquery.slim.min.js')}}">""")</script>
+<script src="{{ url_for('static',filename='assets/dist/js/bootstrap.bundle.js')}}"></script>
+</body>
+</html>

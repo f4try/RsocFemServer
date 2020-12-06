@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Zheng Zong">
+    <meta name="generator" content="RSOCFem v1.0.0">
+    <title>RSOC技术笔记-可逆燃料电池有限元仿真系统</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static',filename='assets/dist/css/bootstrap.css')}}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',filename='assets/dist/css/jumbotron.css') }}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">RSOCFem</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">主页 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link dropdown" href="/fem">有限元程序</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/docs">查看文档</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">联系我们</a>
+            </li>
+        </ul>
+        <a class="btn btn-lg btn-primary mb-3 mb-md-0 ml-md-3" href="/fem">运行程序</a>
+    </div>
+</nav>
+
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-5">可逆固体氧化物燃料电池电堆单元多物理场模型</h1>
+        </div>
+    </div>
+    <div class="container">
+        <p class="lead">
+对于固体氧化物燃料电池（SOFC）模式，氧气流入氧气通道并扩散到多孔氧电极中，其中氧分子与来自外部电路的电子结合，并形成氧离子。氧离子通过致密电解质迁移到氢电极。在氢气侧，蒸汽和氢气流入氢气通道。然后氢扩散到多孔氢电极中，其中氢分子与来自氧电极的氧离子结合，并形成蒸汽并释放电子。然后电子通过外部电路从氢电极传输到氧电极，产生电力。当大于SOFC的开路电位的外部电压施加到电池时，电池的SOFC模式切换到固体氧化物燃料（SOEC）模式。在这种情况下，内部运输和电化学反应将逆转。具体地，多孔氢电极处的蒸汽通过来自外部电路的电子供应分成氢分子和氧离子。然后氧离子通过致密电解质迁移到氧电极，然后氧离子形成氧分子并释放电子。然后电子通过外部电路从氧电极传输到氢电极。在此过程中，产生氢气和氧气并消耗电力。描述在SOFC模式和SOEC模式下操作的固体氧化物电池内的传输和电化学过程的相应数学模型及各模块耦合关系，如图所示</p>
+            <img src="{{ url_for('static',filename='model_structure.png')}}" class="img-fluid" alt="Responsive image"> <br>
+    </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+    <p align="center">&copy; 西安交通大学 2020 陕ICP备‪20009427‬号</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="{{ url_for('static',filename='assets/dist/js/jquery.slim.min.js')}}">')</script>
+<script src="{{ url_for('static',filename='assets/dist/js/bootstrap.bundle.js')}}"></script>
+</body>
+</html>

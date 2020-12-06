@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Zheng Zong">
+    <meta name="generator" content="RSOCFem v1.0.0">
+    <title>RSOC技术笔记-可逆燃料电池有限元仿真系统</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static',filename='assets/dist/css/bootstrap.css') }}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',filename='assets/dist/css/jumbotron.css') }}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">RSOCFem</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">主页 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link dropdown" href="/fem">有限元程序</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/docs">查看文档</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">联系我们</a>
+            </li>
+        </ul>
+        <a class="btn btn-lg btn-primary mb-3 mb-md-0 ml-md-3" href="/fem">运行程序</a>
+    </div>
+</nav>
+
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h2>可逆燃料电池有限元仿真参数输入</h2>
+            <p class="lead">调整燃料电池参数和运行条件进行仿真计算</p>
+            <br><br>
+            <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%">0%</div>
+  </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#m3d">三维模型</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " data-toggle="tab" href="#m2d">二维模型</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#m1d">一维电化学模型</a>
+    </li>
+  </ul>
+
+    <div class="tab-content">
+        <div id="m3d" class="container tab-pane active"><br>
+          <h3>三维模型网格</h3>
+            <img src="{{ url_for('static',filename='mesh3d.png')}}" class="img-fluid" alt="Responsive image"> <br>
+          <h3>三维模型参数</h3>
+            <form action = "/result3d"; method = "POST">
+                <div class="form-group">
+                    <label for="vcell">电池电压</label>
+                    <input type="range" name = "电池电压" class="form-control" id="vcell" step="0.1" min="0.2" max="1.8" value="0.7" onchange="document.getElementById('vcellshow').innerHTML=value">
+                    <span id="vcellshow">0.7</span>V
+                </div>
+                <div class="form-group">
+                    <label for="temperature">温度</label>
+                    <input type="range" name="温度" class="form-control" id="temperature" step="10" min="700" max="1000" value="800" onchange="document.getElementById('temperatureshow').innerHTML=value">
+                    <span id="temperatureshow">800</span>℃
+                </div>
+                <div class="form-group">
+                    <label for="k_c">连接体热导率</label>
+                    <input type="range" name="连接体热导率" class="form-control" id="k_c" step="1" min="30" max="100" value="60" onchange="document.getElementById('k_cshow').innerHTML=value">
+                    <span id="k_cshow">60</span>℃/m
+                </div>
+                <div class="form-group">
+                    <label for="k_s">电极热导率</label>
+                    <input type="range" name="电极热导率" class="form-control" id="k_s" step="0.1" min="5" max="15" value="10" onchange="document.getElementById('k_sshow').innerHTML=value">
+                    <span id="k_sshow">10</span>℃/m
+                </div>
+                <div class="form-group">
+                    <label for="k_l">电解质热导率</label>
+                    <input type="range" name="电解质热导率" class="form-control" id="k_l" step="0.1" min="0.2" max="5" value="1.2" onchange="document.getElementById('k_lshow').innerHTML=value">
+                    <span id="k_lshow">1.2</span>℃/m
+                </div>
+                <div class="form-group">
+                    <label for="xH2">氢气摩尔分数</label>
+                    <input type="range" name="氢气摩尔分数" class="form-control" id="xH2" step="0.01" min="0.0" max="1.0" value="0.95" onchange="document.getElementById('xH2show').innerHTML=value">
+                    <span id="xH2show">0.95</span>
+                </div>
+                <div class="form-group">
+                    <label for="pfuel">燃料气入口压力</label>
+                    <input type="range" name="燃料气入口压力" class="form-control" id="vfuel" step="0.1" min="1.0" max="3.0" value="1.1" onchange="document.getElementById('pfuelshow').innerHTML=value">
+                    <span id="pfuelshow">1</span>m/s
+                </div>
+                <div class="form-group">
+                    <label for="xO2">氧气摩尔分数</label>
+                    <input type="range" name="氧气摩尔分数" class="form-control" id="xO2" step="0.01" min="0.0" max="1.0" value="0.21" onchange="document.getElementById('xO2show').innerHTML=value">
+                    <span id="xO2show">0.21</span>
+                </div>
+                <div class="form-group">
+                    <label for="pair">空气入口压力</label>
+                    <input type="range" name="空气入口压力" class="form-control" id="vair" step="0.1" min="1.0" max="3.0" value="1.1" onchange="document.getElementById('pairshow').innerHTML=value">
+                    <span id="pairshow">1</span>m/s
+                </div>
+                <div class="form-group">
+                    <label for="sigma_c">连接体电导率</label>
+                    <input type="range" name="连接体电导率" class="form-control" id="sigma_c" step="100" min="500" max="3000" value="1500" onchange="document.getElementById('sigma_cshow').innerHTML=value">
+                    <span id="sigma_cshow">1500</span>S/m
+                </div>
+                <div class="form-group">
+                    <label for="sigma_s">电子电导率</label>
+                    <input type="range" name="电子电导率" class="form-control" id="sigma_s" step="100" min="500" max="2000" value="1000" onchange="document.getElementById('sigma_sshow').innerHTML=value">
+                    <span id="sigma_sshow">1000</span>S/m
+                </div>
+                <div class="form-group">
+                    <label for="sigma_l">离子电导率</label>
+                    <input type="range" name="离子电导率" class="form-control" id="sigma_l" step="0.1" min="0.1" max="10" value="1" onchange="document.getElementById('sigma_lshow').innerHTML=value">
+                    <span id="sigma_lshow">1</span>S/m
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" disabled name="计算暂态" type="checkbox"> 计算暂态(建设中暂停使用)
+                    </label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="resultformat">计算结果格式</label>
+                    <label class="radio-inline"><input type="radio" value="vtk" name="计算结果格式" checked>vtk</label>
+                    <label class="radio-inline"><input type="radio" value="h5" name="计算结果格式">h5</label>
+                </div>
+                <button type="submit" class="btn btn-primary">进行计算</button>
+            </form>
+	    <p>计算大概需要6秒左右，请稍等</p>
+        </div>
+        <div id="m2d" class="container tab-pane fade"><br>
+          <h3>二维模型网格</h3>
+            <img src="{{ url_for('static',filename='mesh2d.png')}}" class="img-fluid" alt="Responsive image"> <br>
+          <p>建设中</p>
+        </div>
+        <div id="m1d" class="container tab-pane fade"><br>
+          <h3>一维电化学模型网格</h3>
+            <img src="{{ url_for('static',filename='mesh1d.png')}}" class="img-fluid" alt="Responsive image"> <br>
+          <p>建设中</p>
+        </div>
+    </div>
+    </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+    <p align="center">&copy; 西安交通大学 2020 陕ICP备‪20009427‬号</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="{{ url_for('static',filename='assets/dist/js/jquery.slim.min.js')}}">')</script>
+<script src="{{ url_for('static',filename='assets/dist/js/bootstrap.bundle.js')}}"></script>
+</body>
+</html>
