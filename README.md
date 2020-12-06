@@ -9,7 +9,8 @@
 7.	输入conda install flask sfepy , 安装flask, sfepy有限元库  
 8.	输入git clone https://gitee.com/zongzh/rsoc-fem-server.git ,克隆项目文件夹到用户文档  
 9.	输入cd  rsoc-fem-server进入项目文件目录，输入python main.py  
-10.	浏览器打开 http://localhost/，可以看到项目网站  
+10.	浏览器打开 http://localhost/, 可以看到项目网站, 云服务器网站在 http://sofc.top/ 
+![输入图片说明](https://images.gitee.com/uploads/images/2020/1206/173722_fd076500_5414822.png "屏幕截图.png")
 ## 文件说明
 1.	main.py 文件是flask服务器的主文件，用于渲染html文件和运行sofc_sfepy_data3d.py中的有限元程序（flask官网https://flask.palletsprojects.com/）  
 2.	templates文件夹中是网页文件，采用bootstrap4模板（bootstrap4官网https://getbootstrap.com/）  
