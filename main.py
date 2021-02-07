@@ -31,8 +31,8 @@ def result():
       #     sofc_sfepy.setTransient("sofc_sfepy_data3d.py", False)
       sofc_sfepy.run("sofc_sfepy_data3d.py", result["计算结果格式"])
     #   progress_percent="80"
+      tick = str(int(time.time()))
       if result["计算结果格式"]=="vtk":
-          tick = str(int(time.time()))
           sofc_sfepy.post(3,tick)
     #   progress_percent="100"
       return render_template("result3d.html",result=result,tick=tick)
