@@ -1,6 +1,6 @@
 import pyvista as pv
 
-def run(filename='output/3dcell.vtk',output='output/'):
+def run(filename='static/3dcell.vtk',output='static/'):
     mesh = pv.read(filename)
     cpos = [(0.002899468879017831, 0.0017512736510668626, 0.014440441901019573), (-0.004155028698913291, -0.00329445397240560, -0.0031100280101235373), (-0.016391356798300616, 0.9626709824493171, -0.2701775397259686)]
 

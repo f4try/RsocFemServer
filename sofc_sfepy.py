@@ -27,18 +27,18 @@ def post(dims:int):
     if dims==3:
         vdisplay = Xvfb()
         vdisplay.start()
-        # system("python postproc.py output/3dcell.vtk  -o static/result3d.png -n --wireframe")
+        # system("python postproc.py static/3dcell.vtk  -o static/result3d.png -n --wireframe")
         post_vtk.run()
         vdisplay.stop()
-        if platform.system()=="Windows":
-            system("copy output\\3dcell* static\\")
-        else:
-            system("cp output/3dcell* static/")
+        # if platform.system()=="Windows":
+        #     system("copy output\\3dcell* static\\")
+        # else:
+        #     system("cp output/3dcell* static/")
         
     elif dims==2:
-        system("python postproc.py output/2dcell.vtk  -o static/result2d.png -n --wireframe")
+        system("python postproc.py static/2dcell.vtk  -o static/result2d.png -n --wireframe")
     else:
-        system("python postproc.py output/1dtest.vtk  -o static/result1d.png -n --wireframe")
+        system("python postproc.py static/1dtest.vtk  -o static/result1d.png -n --wireframe")
     # for i in range(10):
     #     system(f"python postproc.py output/sofc2d_mesh.0{i}.vtk  -o output/result.0{i}.png -n --wireframe")
 def mov():

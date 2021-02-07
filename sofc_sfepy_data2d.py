@@ -37,7 +37,7 @@ cwd = os.path.split(os.path.join(os.getcwd(), __file__))[0]
 
 options = {
     'absolute_mesh_path': True,
-    'output_dir': os.path.join(cwd, 'output')
+    'output_dir': os.path.join(cwd, 'static')
 }
 
 regions = {
