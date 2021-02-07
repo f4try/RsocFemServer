@@ -8,10 +8,24 @@ import platform
 
 import post_vtk
 
+from dipy.viz import window
+from xvfbwrapper import Xvfb
+
+# vdisplay = Xvfb()
+# vdisplay.start()
+
+# ren = window.Renderer()
+# window.record(ren, n_frames=1, out_path='test.png', size=(600, 600))
+
+# vdisplay.stop()
+
 def run(filename:str, resultformat:str):
     # pass
     system("python simple.py "+filename+" --format "+resultformat)
+    vdisplay = Xvfb()
+    vdisplay.start()
     post_vtk.run()
+    vdisplay.stop()
     if platform.system()=="Windows":
         system("copy output\\3dcell* static\\")
     else:
@@ -19,7 +33,10 @@ def run(filename:str, resultformat:str):
 def post(dims:int):
     if dims==3:
         # pass
+        vdisplay = Xvfb()
+        vdisplay.start()
         system("python postproc.py output/3dcell.vtk  -o static/result3d.png -n --wireframe")
+        vdisplay.stop()
     elif dims==2:
         system("python postproc.py output/2dcell.vtk  -o static/result2d.png -n --wireframe")
     else:
