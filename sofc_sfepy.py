@@ -20,20 +20,26 @@ from xvfbwrapper import Xvfb
 # vdisplay.stop()
 
 def run(filename:str, resultformat:str):
-    # pass
+    if platform.system()=="Windows":
+        system("del static/3dcell*")
+    else:
+        system("rm static/3dcell*")
     system("python simple.py "+filename+" --format "+resultformat)
     
-def post(dims:int):
+def post(dims:int,tick:str):
     if dims==3:
-        vdisplay = Xvfb()
-        vdisplay.start()
+        if platform.system()=="Linux":
+            vdisplay = Xvfb()
+            vdisplay.start()
         # system("python postproc.py static/3dcell.vtk  -o static/result3d.png -n --wireframe")
-        post_vtk.run()
-        vdisplay.stop()
+        post_vtk.run(tick=tick)
+        if platform.system()=="Linux":
+            vdisplay.stop()
         # if platform.system()=="Windows":
         #     system("copy output\\3dcell* static\\")
         # else:
         #     system("cp output/3dcell* static/")
+        
         
     elif dims==2:
         system("python postproc.py static/2dcell.vtk  -o static/result2d.png -n --wireframe")

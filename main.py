@@ -3,6 +3,7 @@ from flask import Flask
 from flask import request
 from flask import render_template
 import sofc_sfepy
+import time
 # import threading
 
 app = Flask(__name__)
@@ -31,9 +32,10 @@ def result():
       sofc_sfepy.run("sofc_sfepy_data3d.py", result["计算结果格式"])
     #   progress_percent="80"
       if result["计算结果格式"]=="vtk":
-          sofc_sfepy.post(3)
+          tick = str(int(time.time()))
+          sofc_sfepy.post(3,tick)
     #   progress_percent="100"
-      return render_template("result3d.html",result=result)
+      return render_template("result3d.html",result=result,tick=tick)
 
 @app.route('/docs')
 def doc():
