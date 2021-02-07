@@ -18,8 +18,8 @@ def run(filename:str, resultformat:str):
         system("cp output/3dcell* static/")
 def post(dims:int):
     if dims==3:
-        # pass
-        system("python postproc.py output/3dcell.vtk  -o static/result3d.png -n --wireframe")
+        pass
+        # system("python postproc.py output/3dcell.vtk  -o static/result3d.png -n --wireframe")
     elif dims==2:
         system("python postproc.py output/2dcell.vtk  -o static/result2d.png -n --wireframe")
     else:

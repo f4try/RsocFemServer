@@ -1,6 +1,6 @@
 kappa_c = 1500
 kappa_s = 1000
-kappa_m = 1.9
+kappa_m = 1
 k_c = 60
 k_s = 10
 k_l = 1.2
@@ -47,6 +47,8 @@ F_const = 96485.33289
 R_const = 8.31446261815324  
 # R_const = 8.3145  
 K = -6 * l_act * (1 - eps_mac) * F_const * D_agg / R_agg ** 2
+
+
 
 
 
