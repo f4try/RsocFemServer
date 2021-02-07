@@ -5,14 +5,20 @@ import imageio
 path.append( '.' )
 from os import system
 import platform
+
+import post_vtk
+
 def run(filename:str, resultformat:str):
+    # pass
     system("python simple.py "+filename+" --format "+resultformat)
+    post_vtk.run()
     if platform.system()=="Windows":
         system("copy output\\3dcell* static\\")
     else:
         system("cp output/3dcell* static/")
 def post(dims:int):
     if dims==3:
+        # pass
         system("python postproc.py output/3dcell.vtk  -o static/result3d.png -n --wireframe")
     elif dims==2:
         system("python postproc.py output/2dcell.vtk  -o static/result2d.png -n --wireframe")

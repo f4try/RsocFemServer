@@ -8,7 +8,7 @@ http://sofc.top/
 5.	创建名为rsoc的python3.8环境，输入conda create -n rsoc python=3.8  
 6.	输入conda init powershell，重启powershell(Win10)
 7.	输入conda activate rsoc激活环境  
-8.	输入conda install flask sfepy imageio traits traitsui vtk mayavi, 安装flask, sfepy有限元库及其他环境
+8.	输入conda install flask sfepy imageio traits traitsui vtk mayavi pyvista, 安装flask, sfepy有限元库及其他环境
 9.	输入git clone https://gitee.com/zongzh/rsoc-fem-server.git ,或者git clone https://github.com/f4try/RsocFemServer.git 克隆项目文件夹到用户文档  
 10.	输入cd  rsoc-fem-server进入项目文件目录，输入python main.py  
 11.	浏览器打开 http://localhost/, 可以看到项目网站, 

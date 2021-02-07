@@ -90,18 +90,47 @@
     <div class="tab-content">
         <div id="m3d" class="container tab-pane active"><br>
             <h3>输入参数</h3>
-            <p>{% for key, value in result.items() %}
-            {{ key }}
-            {{ value }}
-            {% endfor %}</p>
+            <table border="1">
+                <tr>
+                    <th>项目</th>
+                    <th>设置值</th>
+                </tr>
+                {% for key, value in result.items() %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </table>
             <h3>计算结果预览</h3>
             <img src="{{ url_for('static',filename='result3d.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>网格划分</h5>
+            <img src="{{ url_for('static',filename='3dcell_mesh.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>离子电势分布</h5>
+            <img src="{{ url_for('static',filename='3dcell_phil.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>阳极电子电势分布</h5>
+            <img src="{{ url_for('static',filename='3dcell_phis1.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>阴极电子电势分布</h5>
+            <img src="{{ url_for('static',filename='3dcell_phis3.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>温度分布</h5>
+            <img src="{{ url_for('static',filename='3dcell_T.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>阳极氢气浓度分布</h5>
+            <img src="{{ url_for('static',filename='3dcell_c_h2a.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>阳极水蒸气浓度分布</h5>
+            <img src="{{ url_for('static',filename='3dcell_c_h2oa.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>阴极氮气浓度分布</h5>
+            <img src="{{ url_for('static',filename='3dcell_c_n2c.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>阴极氧气浓度分布</h5>
+            <img src="{{ url_for('static',filename='3dcell_c_o2c.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>阳极压力分布</h5>
+            <img src="{{ url_for('static',filename='3dcell_p1.png')}}" class="img-fluid" alt="Responsive image"> <br>
+            <h5>阴极压力分布</h5>
+            <img src="{{ url_for('static',filename='3dcell_p2.png')}}" class="img-fluid" alt="Responsive image"> <br>
             <h3>计算结果下载</h3>
             <a class="btn btn-lg btn-primary" href="{{ url_for('static',filename='3dcell.vtk')}}" role="button">vtk结果文件下载 &raquo;</a>
             <p>使用ParaView打开，官网<a href="https://www.paraview.org/">https://www.paraview.org/</a></p>
             <a class="btn btn-lg btn-primary" href="{{ url_for('static',filename='3dcell.h5')}}" role="button">h5结果文件下载 &raquo;</a>
             <p>使用HDFView打开，官网<a href="https://portal.hdfgroup.org/display/HDFVIEW/HDFView">https://portal.hdfgroup.org/display/HDFVIEW/HDFView/</a></p>
-
         </div>
         <div id="m2d" class="container tab-pane fade"><br>
           <h3>二维模型网格</h3>
