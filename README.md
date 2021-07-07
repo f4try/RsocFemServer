@@ -1,5 +1,5 @@
 # RsocFemServer
-~~http://sofc.top/~~ 域名已到期
+~~http://sofc.top/~~ 域名已到期  
 http://49.232.208.27/
 ## Linux,  MacOS or Win10
 1.	安装anaconda https://www.anaconda.com/  
